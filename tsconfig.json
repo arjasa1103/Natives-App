@@ -11,16 +11,16 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "paths": {
-      "@domains/*": ["domains/*"],
-      "@views/*": ["views/*"]
-    },
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+//      "@domains/*": ["domains/*"],
+      "@views/*": ["views/*"]
+    }
   }
 }

@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: '../../views/todo/todo.module#TodoViewModule'
+    path:'',
+    loadChildren: '@views/home/home.module#HomeViewModule'
   },
 ];
 

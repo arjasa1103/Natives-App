@@ -1,5 +1,4 @@
 {
-  "include": ["**/*.ts", "../domains/**/*.ts", "../views/**/*.ts"],
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
@@ -8,5 +7,6 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "include": ["../views/", "."]
 }
