@@ -1,0 +1,26 @@
+.animation\:slide-down{
+    animation: slide-down .2s ease 1;
+}
+
+.transform\:rotate-down{
+    transform: rotate(90deg);
+}
+.transform\:hover\:rotate-down:hover{
+    transform: rotate(90deg);
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.transition{
+    transition: all .2s ease;
+}

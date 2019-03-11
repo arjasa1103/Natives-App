@@ -1,0 +1,57 @@
+/*  Border */
+
+@each $width in $borderWidth {
+	.border\:#{$width} {
+		border-style: solid;
+		border-width: #{$width}px;
+	}
+
+	.border\:top\:#{$width} {
+		border-top-style: solid;
+		border-top-width: #{$width}px;
+	}
+
+	.border\:right\:#{$width} {
+		border-right-style: solid;
+		border-right-width: #{$width}px;
+	}
+
+	.border\:bottom\:#{$width} {
+		border-bottom-style: solid;
+		border-bottom-width: #{$width}px;
+	}
+
+	.border\:left\:#{$width} {
+		border-left-style: solid;
+		border-left-width: 1px;
+	}
+}
+
+.border-radius {
+	border-radius: 4px;
+}
+
+.border-radius\:0 {
+	border-radius: 0;
+}
+
+.border-radius\:half {
+	border-radius: 50%;
+}
+
+.border-radius\:top {
+	border-radius: 4px 4px 0 0;
+}
+.border-radius\:right {
+	border-radius: 0 4px 4px 0;
+}
+.border-radius\:bottom {
+	border-radius: 0 0 4px 4px;
+}
+.border_r\:left {
+	border-radius: 4px 0 0 4px;
+}
+
+.box-shadow{
+	box-shadow: 0 0 10px -2px #9b9b9b;
+}

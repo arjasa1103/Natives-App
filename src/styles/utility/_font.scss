@@ -1,0 +1,20 @@
+@each $key, $value in $fontFamilies {
+    .font-family\:#{$key} {
+        font-family: #{$key}, sans-serif;
+    }
+
+    @font-face {
+        font-family: #{$key};
+        src: url('/static/fonts/#{$value}.woff2') format('woff2'),
+            url('/static/fonts/#{$value}.woff') format('woff'),
+            url('/static/fonts/#{$value}.otf') format('otf');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@each $value in $fontWeights {
+    .font-weight\:#{$value} {
+        font-weight: #{$value}px;
+    }
+}
