@@ -5,9 +5,9 @@
 
     @font-face {
         font-family: #{$key};
-        src: url('/static/fonts/#{$value}.woff2') format('woff2'),
-            url('/static/fonts/#{$value}.woff') format('woff'),
-            url('/static/fonts/#{$value}.otf') format('otf');
+        src: url('/assets/fonts/#{$value}.woff2') format('woff2'),
+            url('/assets/fonts/#{$value}.woff') format('woff'),
+            url('/assets/fonts/#{$value}.otf') format('otf');
         font-weight: normal;
         font-style: normal;
     }
