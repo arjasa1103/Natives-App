@@ -1,0 +1,10 @@
+
+$native-theme-primary: mat-palette($mat-blue, 100);
+$native-theme-secondary: mat-palette($mat-light-green, 200);
+$native-theme-warn: mat-palette($mat-deep-orange, A300);
+
+$native-theme: mat-light-theme(
+    $native-theme-primary,
+    $native-theme-secondary,
+    $native-theme-warn
+);
