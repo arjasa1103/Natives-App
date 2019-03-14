@@ -6,24 +6,30 @@
 		border-width: #{$width}px;
 	}
 
-	.border\:top\:#{$width} {
+	.border-top\:#{$width} {
 		border-top-style: solid;
 		border-top-width: #{$width}px;
 	}
 
-	.border\:right\:#{$width} {
+	.border-right\:#{$width} {
 		border-right-style: solid;
 		border-right-width: #{$width}px;
 	}
 
-	.border\:bottom\:#{$width} {
+	.border-bottom\:#{$width} {
 		border-bottom-style: solid;
 		border-bottom-width: #{$width}px;
 	}
 
-	.border\:left\:#{$width} {
+	.border-left\:#{$width} {
 		border-left-style: solid;
 		border-left-width: 1px;
+	}
+}
+
+@each $key, $value in $colors {
+	.border-color\:#{$key}{
+		border-color: #{$value};
 	}
 }
 
@@ -48,7 +54,7 @@
 .border-radius\:bottom {
 	border-radius: 0 0 4px 4px;
 }
-.border_r\:left {
+.border_radius\:left {
 	border-radius: 4px 0 0 4px;
 }
 

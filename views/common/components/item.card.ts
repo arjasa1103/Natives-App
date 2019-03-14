@@ -1,8 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
     selector: 'item-card',
     templateUrl: './item.card.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemCardComponent {
     @Input() public itemImg: string;

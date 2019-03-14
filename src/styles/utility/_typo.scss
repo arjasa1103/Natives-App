@@ -2,6 +2,13 @@
 .font-family\:inherit {
     font-family: inherit;
 }
+
+@each $sizes in $fontSizes {
+    .font-size\:#{$sizes}{
+        font-size: #{$sizes}px;
+    }
+}
+
 .font-size\:inherit {
     font-size: inherit;
 }
@@ -44,6 +51,9 @@
 
 .white-space\:nowrap {
     white-space: nowrap;
+}
+.white-space\:pre{
+    white-space: pre;
 }
 .word-wrap\:break-word {
     word-wrap: break-word;

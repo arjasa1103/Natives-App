@@ -17,22 +17,6 @@
         margin-bottom: #{$size}px;
     }
 
-    .margin\:-#{$size} {
-        margin: -#{$size}px;
-    }
-    .margin-top\:-#{$size} {
-        margin-top: -#{$size}px;
-    }
-    .margin-left\:-#{$size} {
-        margin-left: -#{$size}px;
-    }
-    .margin-right\:-#{$size} {
-        margin-right: -#{$size}px;
-    }
-    .margin-bottom\:-#{$size} {
-        margin-bottom: -#{$size}px;
-    }
-
     .padding\:#{$size} {
         padding: #{$size}px;
     }
@@ -51,6 +35,6 @@
     }
 }
 
-.m\:a {
+.margin\:a {
     margin: auto;
 }
