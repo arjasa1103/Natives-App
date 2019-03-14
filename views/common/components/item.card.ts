@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
-    selector: 'item-card',
+    selector: 'native-item-card',
     templateUrl: './item.card.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })

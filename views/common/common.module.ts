@@ -7,20 +7,22 @@ import {MatCardModule} from '@angular/material';
 import {NavbarComponent} from '@views/common/components/navbar.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CarouselBannerComponent} from '@views/common/components/carousel-banner.component';
+import {CarouselItemDirective} from '@views/common/containers/carousel.directive';
 
 const COMPONENTS = [
     ItemCardComponent,
     FooterComponent,
     NavbarComponent,
+    CarouselBannerComponent
 ];
 
 const CONTAINERS = [
-
+    CarouselItemDirective,
 ];
 
 const PAGES = [
 ];
-
 
 @NgModule({
     declarations: [

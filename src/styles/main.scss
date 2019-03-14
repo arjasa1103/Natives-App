@@ -54,3 +54,9 @@ $container_width: 1200px;
 @import 'utility/_theme.scss';
 
 @include angular-material-theme($native-theme);
+
+.next-btn{
+    padding: 10px;
+    margin: 10px;
+
+}
