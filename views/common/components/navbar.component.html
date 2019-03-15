@@ -1,0 +1,18 @@
+<div class="display:flex flex-direction:row height:45 position:fixed padding-top:15 column:12 z-index:4 container font-color:black">
+    <div class="border-right:2 display:flex align-content:center justify-content:center">
+        <img #navbarLogo src="/assets/images/squared-menu-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (click)="toggleNavbar()">
+    </div>
+    <div class="display:flex align-content:center justify-content:center">
+        <img src="/assets/images/male-user-filled.png" class="object-fit:contain cursor:pointer margin-side:5">
+    </div>
+    <div class="display:flex align-content:center column:12  justify-content:flex-end">
+        <img src="/assets/images/logo.png" class="object-fit:contain column:2 display:flex">
+    </div>
+</div>
+<div #navbarList class="transition position:fixed background-color:white display:flex flex-direction:column justify-content:space-around
+border-radius z-index:4 column:3 font-size:24 max-height:0 height:200 overflow:hidden margin-left:15 margin-top:60 padding-side:25">
+    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Home</div>
+    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">About</div>
+    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Items</div>
+    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Contact Us</div>
+</div>

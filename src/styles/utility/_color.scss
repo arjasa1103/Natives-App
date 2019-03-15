@@ -17,4 +17,7 @@
 	.border-color\:hover\:#{$key}:hover {
 		border-color: #{$value};
 	}
+	.text-decoration-color\:#{$key} {
+		text-decoration-color: #{$value};
+	}
 }
