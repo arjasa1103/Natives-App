@@ -11,9 +11,9 @@ import {ItemCarouselComponent} from "@views/home/components/item-carousel/item-c
 
 const COMPONENTS = [
   CategoryCardComponent,
-    BrandInspirationComponent,
-    BannerCarouselComponent,
-    ItemCarouselComponent
+  BrandInspirationComponent,
+  BannerCarouselComponent,
+  ItemCarouselComponent
 ];
 
 const CONTAINERS = [
