@@ -1,38 +1,48 @@
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
-    Component,
-    ContentChildren, Directive,
-    ElementRef,
-    Input,
-    QueryList,
-    ViewChild,
-    ViewChildren
+    Component, ContentChildren,
+    Directive, ElementRef, Input, QueryList, ViewChild, ViewChildren,
 } from '@angular/core';
+import {BannerItemDirective} from '@views/common/components/banner-item.directive';
 import {animate, AnimationBuilder, AnimationFactory, AnimationPlayer, style} from '@angular/animations';
-import {CarouselItemDirective} from '@views/common/containers/carousel.directive';
 
-@Directive({
-    selector: '.carousel-item'
-})
-export class CarouselItemElement {
-}
+@Directive({selector:'banner-item'})
+export class BannerItemElement{}
+
 
 @Component({
     selector:'native-carousel-banner',
     templateUrl:'carousel-banner.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: [`
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 6000px;
+    }
+
+    .carousel-wrapper {
+      overflow: hidden;
+    }
+
+    .carousel-inner {
+      display: flex;
+    }
+
+  `]
 })
 export class CarouselBannerComponent implements AfterViewInit{
-    @ContentChildren(CarouselItemDirective) items : QueryList<CarouselItemDirective>;
-    @ViewChildren(CarouselItemElement, { read: ElementRef }) private itemsElements : QueryList<ElementRef>;
+    @ContentChildren(BannerItemDirective) items : QueryList<BannerItemDirective>;
+    @ViewChildren(BannerItemElement, { read: ElementRef }) private itemsElements : QueryList<ElementRef>;
     @ViewChild('carousel') private carousel : ElementRef;
     @Input() timing = '250ms ease-in';
     @Input() showControls = true;
     private player : AnimationPlayer;
     private itemWidth : number;
     private currentSlide = 0;
-    carouselWrapperStyle = {};
+    carouselWrapperStyle = {}
 
     next() {
         if( this.currentSlide + 1 === this.items.length ) return;
@@ -60,8 +70,7 @@ export class CarouselBannerComponent implements AfterViewInit{
         this.player.play();
     }
 
-    constructor( private builder :
-                     AnimationBuilder ) {
+    constructor( private builder : AnimationBuilder ) {
     }
 
     ngAfterViewInit() {
@@ -74,5 +83,4 @@ export class CarouselBannerComponent implements AfterViewInit{
         });
 
     }
-
 }

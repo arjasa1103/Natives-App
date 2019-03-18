@@ -12,5 +12,13 @@
       </native-item-card>
     </div>
   </div>
+  <native-carousel-banner>
+    <ng-container *ngFor="let item of items;">
+      <ng-container *carouselItems>
+        <div class="item">{{item.title}}</div>
+      </ng-container>
+    </ng-container>
+  </native-carousel-banner>
+  <native-brand-inspiration></native-brand-inspiration>
   <footer-component></footer-component>
 </body>
