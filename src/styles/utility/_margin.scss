@@ -16,11 +16,14 @@
     .margin-bottom\:#{$size} {
         margin-bottom: #{$size}px;
     }
+    .margin-side\:#{$size} {
+        margin-right: #{$size}px;
+        margin-left: #{$size}px;
+    }
 
     .padding\:#{$size} {
         padding: #{$size}px;
     }
-
     .padding-top\:#{$size} {
         padding-top: #{$size}px;
     }
@@ -33,8 +36,18 @@
     .padding-bottom\:#{$size} {
         padding-bottom: #{$size}px;
     }
+    .padding-side\:#{$size} {
+        padding-right: #{$size}px;
+        padding-left: #{$size}px;
+    }
 }
 
 .margin\:a {
     margin: auto;
+}
+.margin-left\:a {
+    margin-left: auto;
+}
+.margin-right\:a {
+    margin-right: auto;
 }
