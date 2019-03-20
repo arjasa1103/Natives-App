@@ -1,0 +1,18 @@
+<ngu-carousel #bannerCarousel [inputs]="carouselTileConfig" [dataSource]="bannerItems" class="position:relative">
+    <ngu-item *nguCarouselDef="">
+        <div class="bannerItem background-color:lightBlue">
+            <div class="margin-left:25 bannerText">
+                <h2 class="font-size:24 font-family:avenir-light letter-spacing:7 margin-bottom:5">Product Name</h2>
+                <h1 class="font-size:28 font-family:avenir-black letter-spacing:7 margin-bottom:15"><span class="font-size:22 font-family:avenir-lightoblique">by</span> Brand Name</h1>
+                <h2 class="font-size:20 font-family:avenir-light letter-spacing:7 margin-bottom:25">RP. 123456</h2>
+                <button class="font-size:16 font-color:white background-color:orange border-radius:right btn">Add to cart</button>
+            </div>
+            <img class="object-fit:cover position:absolute car-center" src="http://via.placeholder.com/500.png" alt="">
+        </div>
+    </ngu-item>
+        <ul class="bannerPoint" NguCarouselPoint>
+            <li *ngFor="let i of bannerCarousel.pointNumbers; let i = index" [class.active]="i==bannerCarousel.activePoint" (click)="bannerCarousel.moveTo(i)"></li>
+        </ul>
+        <button NguCarouselPrev class='control leftRs1'><i class="fa fa-chevron-left font-color:white font-size:20"></i></button>
+        <button NguCarouselNext class='control rightRs1'><i class="fa fa-chevron-right font-color:white font-size:20t"></i></button>
+</ngu-carousel>

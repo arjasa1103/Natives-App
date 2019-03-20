@@ -15,28 +15,12 @@ export class BannerItemElement{}
     selector:'native-carousel-banner',
     templateUrl:'carousel-banner.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    styles: [`
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      width: 6000px;
-    }
-
-    .carousel-wrapper {
-      overflow: hidden;
-    }
-
-    .carousel-inner {
-      display: flex;
-    }
-
-  `]
+    styleUrls: ['carousel-banner.component.scss'],
 })
 export class CarouselBannerComponent implements AfterViewInit{
     @ContentChildren(BannerItemDirective) items : QueryList<BannerItemDirective>;
     @ViewChildren(BannerItemElement, { read: ElementRef }) private itemsElements : QueryList<ElementRef>;
-    @ViewChild('carousel') private carousel : ElementRef;
+    @ViewChild('carouselBanner') private carousel : ElementRef;
     @Input() timing = '250ms ease-in';
     @Input() showControls = true;
     private player : AnimationPlayer;
@@ -44,10 +28,23 @@ export class CarouselBannerComponent implements AfterViewInit{
     private currentSlide = 0;
     carouselWrapperStyle = {}
 
+    ngAfterViewInit() {
+        // For some reason only here I need to add setTimeout, in my local env it's working without this.
+        setTimeout(() => {
+            console.log(this.itemsElements);
+            this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
+            this.carouselWrapperStyle = {
+                width: `${this.itemWidth}px`
+            }
+        });
+
+    }
+
     next() {
+        console.log(this.currentSlide);
         if( this.currentSlide + 1 === this.items.length ) return;
         this.currentSlide = (this.currentSlide + 1) % this.items.length;
-        const offset = this.currentSlide * this.itemWidth;
+        const offset = 100;
         const myAnimation : AnimationFactory = this.buildAnimation(offset);
         this.player = myAnimation.create(this.carousel.nativeElement);
         this.player.play();
@@ -60,10 +57,12 @@ export class CarouselBannerComponent implements AfterViewInit{
     }
 
     prev() {
+        console.log(this.currentSlide);
+
         if( this.currentSlide === 0 ) return;
 
         this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
-        const offset = this.currentSlide * this.itemWidth;
+        const offset = 100;
 
         const myAnimation : AnimationFactory = this.buildAnimation(offset);
         this.player = myAnimation.create(this.carousel.nativeElement);
@@ -71,16 +70,5 @@ export class CarouselBannerComponent implements AfterViewInit{
     }
 
     constructor( private builder : AnimationBuilder ) {
-    }
-
-    ngAfterViewInit() {
-        // For some reason only here I need to add setTimeout, in my local env it's working without this.
-        setTimeout(() => {
-            this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-            this.carouselWrapperStyle = {
-                width: `${this.itemWidth}px`
-            }
-        });
-
     }
 }
