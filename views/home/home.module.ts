@@ -6,11 +6,12 @@ import {CommonModule} from '@angular/common';
 import {BrandInspirationComponent} from '@views/home/components/brand-inspiration/brand-inspiration.component';
 import {NguCarouselModule} from '@ngu/carousel';
 import {BannerCarouselComponent} from '@views/home/components/home-banner/banner-carousel.component';
-import {MatButtonModule} from '@angular/material';
+import {ItemCarouselComponent} from "@views/home/components/item-carousel/item-carousel.component";
 
 const COMPONENTS = [
     BrandInspirationComponent,
     BannerCarouselComponent,
+    ItemCarouselComponent
 ];
 
 const CONTAINERS = [
@@ -31,8 +32,7 @@ const PAGES = [
     HOME_ROUTING,
     CommonModule,
     CommonViewModule,
-    NguCarouselModule,
-    MatButtonModule
+    NguCarouselModule
   ],
 })
 export class HomeViewModule {}

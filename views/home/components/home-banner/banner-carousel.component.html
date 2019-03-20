@@ -1,5 +1,5 @@
-<ngu-carousel #bannerCarousel [inputs]="carouselTileConfig" [dataSource]="bannerItems" class="position:relative">
-    <ngu-item *nguCarouselDef="">
+<ngu-carousel #bannerCarousel [inputs]="carouselTileConfig" [dataSource]="bannerItems" class="">
+    <ngu-item *nguCarouselDef="let item, let ani = animate">
         <div class="bannerItem background-color:lightBlue">
             <div class="margin-left:25 bannerText">
                 <h2 class="font-size:24 font-family:avenir-light letter-spacing:7 margin-bottom:5">Product Name</h2>
