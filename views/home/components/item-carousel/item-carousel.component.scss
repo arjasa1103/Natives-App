@@ -1,0 +1,26 @@
+.rightCtrl {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.leftCtrl{
+  position: absolute;
+  left: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.control {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: rgba(244, 133, 77, 0.2);
+  color: white;
+  &:hover{
+    background-color: rgba(244, 133, 77, 0.5);
+    transition: ease-in 0.2s;
+  }
+}
