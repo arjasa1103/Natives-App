@@ -8,6 +8,7 @@ import {BrandInspirationComponent} from '@views/home/components/brand-inspiratio
 import {NguCarouselModule} from '@ngu/carousel';
 import {BannerCarouselComponent} from '@views/home/components/home-banner/banner-carousel.component';
 import {ItemCarouselComponent} from "@views/home/components/item-carousel/item-carousel.component";
+import {FormViewModule} from '@views/form/form.module';
 
 const COMPONENTS = [
   CategoryCardComponent,
@@ -34,7 +35,9 @@ const PAGES = [
     HOME_ROUTING,
     CommonModule,
     CommonViewModule,
-    NguCarouselModule
+    NguCarouselModule,
+    CommonViewModule,
+    FormViewModule
   ],
 })
 export class HomeViewModule {}

@@ -1,0 +1,16 @@
+<div #dialogContainer class="animation:fade">
+    <div class="position:absolute height:full width:full background-color:black opacity:05 top:0 left:0 z-index:5">
+    </div>
+
+    <div #formContainer class="background-color:white column:3 dialog padding:25 transition">
+        <div class="column:12 dialog-top">
+            <img src="/assets/images/logo.png" class="height:30">
+            <img src="/assets/images/stop-symbol.png" class="height:30 position:absolute right:0 cursor:pointer" (click)="closeDialog()">
+        </div>
+
+        <login-form [ngClass]="{ 'open-form': FormState === 1}" (toggleView)="toggleForm($event)"></login-form>
+        <register-form [ngClass]="{ 'open-form': FormState === 2}" (toggleView)="toggleForm($event)"></register-form>
+
+    </div>
+</div>
+

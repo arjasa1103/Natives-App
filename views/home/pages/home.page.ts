@@ -13,4 +13,17 @@ export class HomePage {
   ]
 
 }
+export class HomePage {
+
+  public DialogState: number;
+
+  public showDialog(param) {
+    this.DialogState = param;
+  }
+
+  public constructor() {
+    this.DialogState = 0;
+  }
+
+}
 

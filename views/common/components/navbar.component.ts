@@ -1,8 +1,9 @@
-import {ChangeDetectionStrategy, Component, ElementRef, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
     selector: 'navbar-component',
     templateUrl: './navbar.component.html',
+    styleUrls: ['navbar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
@@ -11,6 +12,12 @@ export class NavbarComponent {
     @ViewChild('navbarLogo') navbarLogo: ElementRef;
     @ViewChild('navbarList') navbarList: ElementRef;
     @ViewChild('loginRegister') loginRegister: ElementRef;
+
+    @Output() public toggleDialog: EventEmitter<number>;
+
+    public constructor() {
+        this.toggleDialog = new EventEmitter<number>();
+    }
 
     public toggleNavbar(): void {
         if (this.navbarLogo.nativeElement.src === 'http://localhost:4200/assets/images/squared-menu-filled.png') {
@@ -33,5 +40,13 @@ export class NavbarComponent {
             this.loginRegister.nativeElement.classList.remove('width:250');
             this.loginRegister.nativeElement.classList.add('width:50');
         }
+    }
+
+    public showLogin() {
+        this.toggleDialog.emit(1);
+    }
+
+    public showRegister() {
+        this.toggleDialog.emit(2);
     }
 }

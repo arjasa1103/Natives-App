@@ -2,11 +2,12 @@
     animation: slide-down .2s ease 1;
 }
 
-.transform\:rotate-down{
-    transform: rotate(90deg);
+.transform\:translate\:half {
+    transform: translate(-50%, -50%);
 }
-.transform\:hover\:rotate-down:hover{
-    transform: rotate(90deg);
+
+.animation\:fade {
+    transition: opacity 1s ease;
 }
 
 @keyframes slide-down {

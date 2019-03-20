@@ -1,23 +1,21 @@
-<div class="display:flex flex-direction:row height:45 position:fixed padding-top:15 column:12 z-index:4 container font-color:black">
+<div class="navbar container column:12 font-color:black">
     <div class="border-right:2 display:flex align-content:center justify-content:center">
         <img #navbarLogo src="/assets/images/squared-menu-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (click)="toggleNavbar()">
     </div>
-    <div #loginRegister class="transition display:flex align-content:center justify-content:flex-start width:50 overflow:hidden" (mouseleave)="closeLoginRegister()">
+    <div #loginRegister class="navbar-auth width:50" (mouseleave)="closeLoginRegister()">
         <img src="/assets/images/male-user-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (mouseenter)="openLoginRegister()">
-        <div  class="border-radius font-size:20 text-align:center display:flex justify-content:space-around align-content:center
-         width:200 font-color:white background-color:black white-space:nowrap cursor:pointer overflow:hidden">
-            <div class="cursor:pointer">Log In</div>
-            <div class="cursor:pointer">Register</div>
+        <div  class="navbar-auth-list font-color:black">
+            <div class="navbar-auth-list-link" (click)="showLogin()">Log In</div>
+            <div class="navbar-auth-list-link" (click)="showRegister()">Register</div>
         </div>
     </div>
     <div class="display:flex align-content:center right:15 top:15 position:absolute">
         <img src="/assets/images/logo.png" class="object-fit:contain width:200 height:30 display:flex">
     </div>
 </div>
-<div #navbarList class="transition position:fixed background-color:white display:flex flex-direction:column justify-content:space-around
-border-radius z-index:4 width:300 font-size:24 max-height:0 height:200 overflow:hidden margin-left:15 margin-top:60 padding-side:25">
-    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Home</div>
-    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">About</div>
-    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Items</div>
-    <div class="transition border-bottom:2 border-color:transparent border-color:black:hover cursor:pointer">Contact Us</div>
+<div #navbarList class="navbar-list">
+    <div class="navbar-list-link border-color:hover:black">Home</div>
+    <div class="navbar-list-link border-color:hover:black">About</div>
+    <div class="navbar-list-link border-color:hover:black">Items</div>
+    <div class="navbar-list-link border-color:hover:black">Contact Us</div>
 </div>
