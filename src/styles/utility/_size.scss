@@ -8,4 +8,7 @@
     .width\:#{$size} {
         width: #{$size}px;
     }
+    .max-width\:#{$size} {
+        max-width: #{$size}px;
+    }
 }
