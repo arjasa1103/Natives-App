@@ -9,10 +9,6 @@ const routes: Routes = [
   {
     path:'items',
     loadChildren: '@views/items/items.module#ItemsViewModule'
-  },
-  {
-    path:'**',
-    redirectTo: '',
   }
 ];
 
