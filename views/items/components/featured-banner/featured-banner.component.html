@@ -1,0 +1,14 @@
+<ngu-carousel #bannerCarousel [inputs]="carouselTileConfig" [dataSource]="bannerItems" class="">
+    <ngu-item *nguCarouselDef="let item, let ani = animate">
+        <div class="bannerItem background-color:lightBlue">
+            <div class="bannerText text-align:right">
+                <h2 class="font-size:20 font-family:avenir-black letter-spacing:7 margin-bottom:10">Summer Collection</h2>
+                <button class="font-size:16 font-color:white background-color:orange letter-spacing:7 border-radius:right btn">See More</button>
+            </div>
+            <img class="display:block object-fit:cover margin:a car-img" src="http://via.placeholder.com/1000x200.png" alt="">
+        </div>
+    </ngu-item>
+    <ul class="bannerPoint" NguCarouselPoint>
+        <li *ngFor="let i of bannerCarousel.pointNumbers; let i = index" [class.active]="i==bannerCarousel.activePoint" (click)="bannerCarousel.moveTo(i)"></li>
+    </ul>
+</ngu-carousel>
