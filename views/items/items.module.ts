@@ -6,6 +6,7 @@ import {NguCarouselModule} from '@ngu/carousel';
 import {ItemsPage} from '@views/items/pages/items.page';
 import {FeaturedBannerComponent} from '@views/items/components/featured-banner/featured-banner.component';
 import {ItemListComponent} from '@views/items/components/item-list/item-list.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 const COMPONENTS = [
     FeaturedBannerComponent,
@@ -30,7 +31,8 @@ const PAGES = [
         ITEMS_ROUTING,
         CommonModule,
         CommonViewModule,
-        NguCarouselModule
+        NguCarouselModule,
+        NgxPaginationModule
     ],
 })
 export class ItemsViewModule {}
