@@ -3,7 +3,6 @@
 <body>
   <navbar-component (toggleDialog)="showDialog($event)"></navbar-component>
   <banner-carousel></banner-carousel>
-  <item-carousel></item-carousel>
   <div class="row">
     <div class="column:6">
       <category-card category="Male" bgcolor="green" image="/assets/images/homer.svg"></category-card>
@@ -11,16 +10,8 @@
     <div class="column:6">
       <category-card category="Female" bgcolor="lightYellow" image="/assets/images/homer.svg"></category-card>
     </div>
-
-    <div class="column:3">
-      <native-item-card
-              itemImg="https://via.placeholder.com/300.png"
-              brandName="Brand Name"
-              itemName="Item Name"
-              itemPrice="IDR 123456">
-      </native-item-card>
-    </div>
   </div>
+  <item-carousel></item-carousel>
 
   <ng-container *ngIf="DialogState === 1 else dialogState2">
     <dialog-component [FormState]="1" (toggleDialog)="showDialog($event)"></dialog-component>
