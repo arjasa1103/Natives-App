@@ -1,13 +1,13 @@
 <mat-card class="margin:25 position:relative" style="background: rgba(223, 221, 197, 0.4);">
     <img mat-card-image [src]="itemImg" alt="" class="background-color:white">
-    <mat-card-content class="padding:5">
+    <mat-card-content class="padding:15">
         <div class="row">
-            <div class="column:6 display:flex flex-direction:column justify-content:space-between" style="height: 100px;">
-                <h1 class="font-size:16 font-family:avenir-book letter-spacing:5 margin-bottom:5">{{itemName}}</h1>
-                <h2 class="font-size:14 font-family:avenir-black letter-spacing:7">{{brandName}}</h2>
+            <div class="column:6">
+                <h1 class="font-size:18 font-family:avenir-book letter-spacing:5 margin-bottom:5">{{brandName}}</h1>
+                <h2 class="font-size:16 font-family:avenir-black letter-spacing:7">{{itemName}}</h2>
             </div>
             <div class="column:6 display:flex align-items:flex-end justify-content:flex-end">
-                <h2 class="font-size:16 font-family:avenir-heavy text-align:right">IDR {{itemPrice}}</h2>
+                <h2 class="font-size:16 font-family:avenir-heavy text-align:right">{{itemPrice}}</h2>
             </div>
         </div>
     </mat-card-content>
