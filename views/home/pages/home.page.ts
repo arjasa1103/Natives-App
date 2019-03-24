@@ -12,9 +12,6 @@ export class HomePage {
     { title: 'Slide 3' },
   ]
 
-}
-export class HomePage {
-
   public DialogState: number;
 
   public showDialog(param) {
