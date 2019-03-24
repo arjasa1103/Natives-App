@@ -12,5 +12,15 @@ export class HomePage {
     { title: 'Slide 3' },
   ]
 
+  public DialogState: number;
+
+  public showDialog(param) {
+    this.DialogState = param;
+  }
+
+  public constructor() {
+    this.DialogState = 0;
+  }
+
 }
 

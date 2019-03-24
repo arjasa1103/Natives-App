@@ -31,8 +31,8 @@
 	.border-color\:#{$key}{
 		border-color: #{$value};
 	}
-	.border-color\:#{$key}\:hover:hover {
-		border-color: #{$value};
+	.border-color\:hover\:#{$key}:hover {
+		border-color: #{$value} !important;
 	}
 }
 
