@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {ItemCardComponent} from '@views/common/components/item.card';
+import {ItemCardComponent} from '@views/common/components/item-card/item.card';
 import {FooterComponent} from '@views/common/components/footer.component';
 import {HOME_ROUTING} from '@views/home/home.route';
 import {CommonModule} from '@angular/common';
