@@ -4,7 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
     selector: 'register-form',
     templateUrl: './register.form.html',
-    styleUrls: ['form.form.scss'],
+    styleUrls: ['../form.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 

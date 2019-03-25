@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, Vi
 @Component({
     selector: 'navbar-component',
     templateUrl: './navbar.component.html',
-    styleUrls: ['navbar.component.scss'],
+    styleUrls: ['navbar/navbar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 

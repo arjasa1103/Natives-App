@@ -4,7 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
     selector: 'login-form',
     templateUrl: './login.form.html',
-    styleUrls: ['form.form.scss'],
+    styleUrls: ['../form.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 

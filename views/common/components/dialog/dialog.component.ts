@@ -14,7 +14,7 @@ import {
 @Component({
     selector: 'dialog-component',
     templateUrl: './dialog.component.html',
-    styleUrls: ['dialog.component.scss'],
+    styleUrls: ['./dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
