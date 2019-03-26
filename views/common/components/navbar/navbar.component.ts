@@ -1,4 +1,6 @@
-import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {AuthService} from "../../../../src/services/api/auth.service";
+import {tap} from "rxjs/operators";
 
 @Component({
     selector: 'navbar-component',
@@ -7,16 +9,33 @@ import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Out
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
     @ViewChild('navbarLogo') navbarLogo: ElementRef;
     @ViewChild('navbarList') navbarList: ElementRef;
     @ViewChild('loginRegister') loginRegister: ElementRef;
 
     @Output() public toggleDialog: EventEmitter<number>;
+    @Input() public loginState: boolean;
 
-    public constructor() {
+    public DialogState: number;
+    public LoginState: boolean;
+    public currentUser: any;
+
+    ngOnInit(): void {
+        this.loginState = false;
+        this.authService.me().pipe(
+            tap(result => {
+                this.currentUser = result;
+            }),
+        ).subscribe();
+    }
+
+    public constructor(
+        private authService: AuthService
+    ) {
         this.toggleDialog = new EventEmitter<number>();
+        this.DialogState = 0;
     }
 
     public toggleNavbar(): void {
@@ -42,11 +61,16 @@ export class NavbarComponent {
         }
     }
 
-    public showLogin() {
-        this.toggleDialog.emit(1);
+    public showDialog(param) {
+        this.DialogState = param;
     }
 
-    public showRegister() {
-        this.toggleDialog.emit(2);
+    public changeState(param) {
+        this.LoginState = param;
+    }
+
+    public logout() {
+        this.LoginState = false;
+        this.authService.logout();
     }
 }

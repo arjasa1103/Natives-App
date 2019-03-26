@@ -1,13 +1,12 @@
 import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
 import {Api} from "../libraries/api";
 
 @Injectable()
 export class AuthService {
     constructor(private api:Api){}
 
-    public getUser(user_id): Observable<any> {
-        return this.api.get(`users/${user_id}`);
+    public me(){
+        return this.api.get('userdata');
     }
 
     public login(body) {

@@ -3,9 +3,15 @@
         <img src="/assets/images/male-user-filled.png" class="form-children-image">
         <input type="text" formControlName="email" placeholder="Email" class="form-children-input font-color:black column:10">
     </div>
+    <div class="form-children-error column:11" *ngIf="!success && submitted && form.controls['email'].invalid">
+        Invalid Input
+    </div>
     <div class="form-children border-color:black column:11">
         <img src="/assets/images/lock-filled.png" class="form-children-image">
         <input type="password" formControlName="password" placeholder="Password" class="form-children-input font-color:black column:10">
+    </div>
+    <div class="form-children-error column:11" *ngIf="!success && submitted && form.controls['password'].invalid">
+        Invalid Input
     </div>
     <div>
         <button class="form-button background-color:pink font-color:white" (click)="submitForm()">Sign In</button>

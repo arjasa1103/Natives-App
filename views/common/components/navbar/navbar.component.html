@@ -2,13 +2,23 @@
     <div class="border-right:2 display:flex align-content:center justify-content:center">
         <img #navbarLogo src="/assets/images/squared-menu-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (click)="toggleNavbar()">
     </div>
-    <div #loginRegister class="navbar-auth width:50" (mouseleave)="closeLoginRegister()">
-        <img src="/assets/images/male-user-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (mouseenter)="openLoginRegister()">
-        <div  class="navbar-auth-list font-color:black">
-            <div class="navbar-auth-list-link" (click)="showLogin()">Log In</div>
-            <div class="navbar-auth-list-link" (click)="showRegister()">Register</div>
+
+    <ng-container *ngIf="LoginState else notLogin">
+        <div class="navbar-username">
+            Welcome, {{currentUser.username}}!
         </div>
-    </div>
+    </ng-container>
+
+    <ng-template #notLogin>
+        <div #loginRegister class="navbar-auth width:50" (mouseleave)="closeLoginRegister()">
+            <img src="/assets/images/male-user-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (mouseenter)="openLoginRegister()">
+            <div  class="navbar-auth-list font-color:black">
+                <div class="navbar-auth-list-link" (click)="showDialog(1)">Log In</div>
+                <div class="navbar-auth-list-link" (click)="showDialog(2)">Register</div>
+            </div>
+        </div>
+    </ng-template>
+
     <div class="display:flex align-content:center right:15 top:15 position:absolute">
         <img src="/assets/images/logo.png" class="object-fit:contain width:200 height:30 display:flex">
     </div>
@@ -18,4 +28,20 @@
     <div class="navbar-list-link border-color:hover:black">About</div>
     <div class="navbar-list-link border-color:hover:black">Items</div>
     <div class="navbar-list-link border-color:hover:black">Contact Us</div>
+    <ng-container *ngIf="LoginState">
+        <div class="navbar-list-link border-color:hover:black" (click)="logout()">Log Out</div>
+    </ng-container>
 </div>
+
+<ng-container *ngIf="DialogState === 1 else dialogState2">
+    <dialog-component [FormState]="1" (toggleDialog)="showDialog($event)" (toggleState)="changeState($event)"></dialog-component>
+</ng-container>
+
+<ng-template #dialogState2>
+    <ng-container *ngIf="DialogState === 2 else dialogClose">
+        <dialog-component [FormState]="2" (toggleDialog)="showDialog($event)"></dialog-component>
+    </ng-container>
+</ng-template>
+
+<ng-template #dialogClose>
+</ng-template>
