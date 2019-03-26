@@ -17,7 +17,7 @@ export class FeaturedBannerComponent {
         },
         touch: true,
         loop: true,
-        interval: { timing: 10000 },
+        interval: { timing: 5000 },
         animation: 'lazy'
     };
 }
