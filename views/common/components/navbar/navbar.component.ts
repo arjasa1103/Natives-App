@@ -70,7 +70,6 @@ export class NavbarComponent implements OnInit{
     }
 
     getUser() {
-        console.log('hahaha');
         this.authService.me().pipe(
             tap(result => {
                 this.LoginState = true;

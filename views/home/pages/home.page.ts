@@ -10,17 +10,7 @@ export class HomePage {
     { title: 'Slide 1' },
     { title: 'Slide 2' },
     { title: 'Slide 3' },
-  ]
-
-  public DialogState: number;
-
-  public showDialog(param) {
-    this.DialogState = param;
-  }
-
-  public constructor() {
-    this.DialogState = 0;
-  }
+  ];
 
 }
 
