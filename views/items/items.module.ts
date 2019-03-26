@@ -21,8 +21,8 @@ const CONTAINERS = [
 
 ];
 
-const PAGES = [
-    ItemsPage
+const PAGES =[
+    ItemsPage,
 ];
 
 @NgModule({
