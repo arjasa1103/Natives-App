@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from "../../../../src/services/api/auth.service";
-import {mapToData} from "../../../../src/services/mapping/data.map";
 import {tap} from "rxjs/operators";
 
 @Component({
@@ -13,21 +12,30 @@ import {tap} from "rxjs/operators";
 
 export class LoginForm implements OnInit{
 
-    @Output() public toggleView: EventEmitter<number>;
+    @Output() public toggleForm: EventEmitter<number>;
+    @Output() public toggleDialog: EventEmitter<boolean>;
     public form: FormGroup;
+    public success: boolean;
+    public submitted: boolean;
 
     public constructor(
         private fb: FormBuilder,
         private authService: AuthService
     ) {
-        this.toggleView = new EventEmitter<number>();
+        this.toggleForm = new EventEmitter<number>();
+        this.toggleDialog = new EventEmitter<boolean>();
+        this.success = false;
+        this.submitted = false;
     }
 
     public gotoSignup() {
-        this.toggleView.emit(1);
+        this.toggleForm.emit(1);
     }
 
     public submitForm(){
+        this.submitted = true;
+        this.success = !(this.form.controls['email'].invalid || this.form.controls['password'].invalid);
+
         this.authService.login(this.form.getRawValue())
         .pipe(
             tap(result => {
@@ -35,6 +43,10 @@ export class LoginForm implements OnInit{
                 localStorage.setItem('token', result.access_token);
             }),
         ).subscribe();
+
+        if (this.submitted && this.success){
+            this.toggleDialog.emit(true);
+        }
     }
 
     public ngOnInit(){

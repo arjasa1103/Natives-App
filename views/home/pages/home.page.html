@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <body>
-  <navbar-component (toggleDialog)="showDialog($event)"></navbar-component>
+  <navbar-component></navbar-component>
   <banner-carousel></banner-carousel>
   <div class="row margin-top:25 margin-bottom:25">
     <div class="column:6">
@@ -12,19 +12,6 @@
     </div>
   </div>
   <item-carousel></item-carousel>
-
-  <ng-container *ngIf="DialogState === 1 else dialogState2">
-    <dialog-component [FormState]="1" (toggleDialog)="showDialog($event)"></dialog-component>
-  </ng-container>
-
-  <ng-template #dialogState2>
-    <ng-container *ngIf="DialogState === 2 else dialogClose">
-      <dialog-component [FormState]="2" (toggleDialog)="showDialog($event)"></dialog-component>
-    </ng-container>
-  </ng-template>
-
-  <ng-template #dialogClose>
-  </ng-template>
 
   <native-brand-inspiration></native-brand-inspiration>
   <footer-component></footer-component>
