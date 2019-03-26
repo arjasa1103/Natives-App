@@ -31,6 +31,12 @@
         }
     }
 
+    &-username {
+        font-size: 22px;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+
     &-auth {
         transition: all .2s ease;
         display: flex;
@@ -46,7 +52,7 @@
             display: flex;
             justify-content: space-around;
             align-content: center;
-            width: 200px;
+            width: 220px;
             white-space: nowrap;
             cursor: pointer;
             overflow: hidden;

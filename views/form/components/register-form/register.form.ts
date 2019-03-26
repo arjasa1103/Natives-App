@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {tap} from "rxjs/operators";
+import {AuthService} from "../../../../src/services/api/auth.service";
 
 @Component({
     selector: 'register-form',
@@ -10,20 +12,42 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 export class RegisterForm implements OnInit{
 
-    @Output() public toggleView: EventEmitter<number>;
+    @Output() public toggleForm: EventEmitter<number>;
+    @Output() public toggleDialog: EventEmitter<boolean>;
     public form: FormGroup;
+    public success: boolean;
+    public submitted: boolean;
 
-    public constructor() {
-        this.toggleView = new EventEmitter<number>();
+    public constructor(
+        private authService: AuthService,
+        private fb: FormBuilder,
+    ) {
+        this.toggleForm = new EventEmitter<number>();
+        this.toggleDialog = new EventEmitter<boolean>();
+        this.success = false;
+        this.submitted = false;
     }
 
     public gotoSignin() {
-        this.toggleView.emit(2);
+        this.toggleForm.emit(2);
     }
 
     public submitForm() {
-        if (this.form){
+        this.submitted = true;
+        this.success = !(this.form.controls['email'].invalid ||
+                        this.form.controls['password'].invalid ||
+                        this.form.controls['username'].invalid);
 
+        this.authService.register(this.form.getRawValue())
+            .pipe(
+                tap(result => {
+                    // @ts-ignore
+                    console.log(result.access_token);
+                }),
+            ).subscribe();
+
+        if (this.submitted && this.success){
+            setTimeout( () => {this.toggleDialog.emit(true);}, 2000 );
         }
     }
 
@@ -32,7 +56,6 @@ export class RegisterForm implements OnInit{
             username: new FormControl('', [Validators.required]),
             email: new FormControl('', [Validators.required, Validators.email]),
             password: new FormControl('', [Validators.required]),
-            reenter_password: new FormControl('', [Validators.required])
         });
     }
 }

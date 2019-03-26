@@ -22,15 +22,16 @@ export class DialogComponent implements OnInit{
 
     @Input() public FormState: number;
     @Output() public toggleDialog: EventEmitter<number>;
+    @Output() public toggleState: EventEmitter<boolean>;
     @ViewChild('formContainer') formContainer: ElementRef;
     @ViewChild('dialogContainer') dialogContainer: ElementRef;
 
     public toggleForm() {
         if (this.FormState === 1) {
             this.formContainer.nativeElement.classList.remove('height:350');
-            this.formContainer.nativeElement.classList.add('height:500');
+            this.formContainer.nativeElement.classList.add('height:420');
         } else {
-            this.formContainer.nativeElement.classList.remove('height:500');
+            this.formContainer.nativeElement.classList.remove('height:420');
             this.formContainer.nativeElement.classList.add('height:350');
         }
 
@@ -41,13 +42,18 @@ export class DialogComponent implements OnInit{
         this.toggleDialog.emit(3);
     }
 
+    public changeState() {
+        this.toggleState.emit(true);
+    }
+
     public constructor() {
         this.toggleDialog = new EventEmitter<number>();
+        this.toggleState = new EventEmitter<boolean>();
     }
 
     ngOnInit() {
         if (this.FormState === 1) {
-            this.dialogContainer.nativeElement.classList.add('height:500');
+            this.dialogContainer.nativeElement.classList.add('height:420');
         }else {
             this.dialogContainer.nativeElement.classList.add('height:350');
         }

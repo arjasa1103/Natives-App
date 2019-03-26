@@ -18,8 +18,8 @@ export class Api {
     bindHeader() {
         this.header = {};
 
-        if (localStorage.getItem('access_token')){
-            this.header['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
+        if (localStorage.getItem('token')){
+            this.header['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
         }
     }
 
