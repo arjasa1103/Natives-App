@@ -7,7 +7,6 @@ export class AuthService {
 
     public me(){
         return this.api.get('userdata');
-        console.log(this.api.get('userdata'))
     }
 
     public login(body) {
