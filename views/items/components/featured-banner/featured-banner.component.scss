@@ -1,0 +1,46 @@
+.bannerPoint {
+    list-style-type: none;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    box-sizing: border-box;
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+    li {
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid white;
+        padding: 4px;
+        margin: 0 8px;
+        transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        transition: 0.4s;
+        &.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+        &:hover{
+            background-color: #fff;
+            opacity: 70%;
+            transition: 0.2s ease-in;
+        }
+    }
+}
+
+.car-img{
+    height: 100%;
+}
+
+.bannerItem{
+    height: 35vh;
+    position: relative;
+}
+
+.bannerText{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: 5;
+}
