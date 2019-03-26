@@ -6,12 +6,6 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
-  private items = [
-    { title: 'Slide 1' },
-    { title: 'Slide 2' },
-    { title: 'Slide 3' },
-  ]
-
   public DialogState: number;
 
   public showDialog(param) {

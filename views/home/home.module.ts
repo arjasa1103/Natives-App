@@ -22,7 +22,7 @@ const CONTAINERS = [
 ];
 
 const PAGES = [
-  HomePage
+  HomePage,
 ];
 
 @NgModule({
@@ -31,12 +31,16 @@ const PAGES = [
     ...CONTAINERS,
     ...PAGES,
   ],
+  exports: [
+      ...COMPONENTS,
+      ...CONTAINERS,
+      ...PAGES
+  ],
   imports: [
     HOME_ROUTING,
     CommonModule,
     CommonViewModule,
     NguCarouselModule,
-    CommonViewModule,
     FormViewModule
   ],
 })

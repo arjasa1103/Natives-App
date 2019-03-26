@@ -6,8 +6,6 @@ import {CommonModule} from '@angular/common';
 import {MatCardModule, MatDialogModule} from '@angular/material';
 import {NavbarComponent} from '@views/common/components/navbar.component';
 import {DialogComponent} from '@views/common/components/dialog.component';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormViewModule} from '@views/form/form.module';
 
 const COMPONENTS = [
@@ -24,7 +22,7 @@ const CONTAINERS = [
 const PAGES = [
 ];
 
-// @ts-ignore
+
 @NgModule({
     declarations: [
         ...COMPONENTS,

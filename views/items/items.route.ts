@@ -2,6 +2,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {ItemsPage} from '@views/items/pages/items.page';
 import {ItemListComponent} from '@views/items/components/item-list/item-list.component';
+import {ItemComponent} from '@views/items/components/item/item.component';
 
 const routes: Routes = [
     {
@@ -17,11 +18,12 @@ const routes: Routes = [
                 component: ItemListComponent,
             },
             {
-                path: '**',
-                redirectTo: 'page/1',
+                path: 'item/:id',
+                component: ItemComponent,
             }
-        ]
+        ],
     },
+
 ];
 
 export const ITEMS_ROUTING: ModuleWithProviders = RouterModule.forChild(routes);
