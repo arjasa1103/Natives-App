@@ -8,10 +8,13 @@ import {FeaturedBannerComponent} from '@views/items/components/featured-banner/f
 import {ItemListComponent} from '@views/items/components/item-list/item-list.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {RouterModule} from '@angular/router';
+import {HomeViewModule} from '@views/home/home.module';
+import {ItemComponent} from '@views/items/components/item/item.component';
 
 const COMPONENTS = [
     FeaturedBannerComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemComponent
 ];
 
 const CONTAINERS = [
@@ -34,6 +37,7 @@ const PAGES =[
         CommonViewModule,
         NguCarouselModule,
         NgxPaginationModule,
+        HomeViewModule,
         RouterModule
     ],
 })

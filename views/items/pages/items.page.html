@@ -1,7 +1,19 @@
-<navbar-component></navbar-component>
-
-<featured-banner></featured-banner>
+<navbar-component (toggleDialog)="showDialog($event)"></navbar-component>
 
 <router-outlet></router-outlet>
+
+<ng-container *ngIf="DialogState === 1 else dialogState2">
+    <dialog-component [FormState]="1" (toggleDialog)="showDialog($event)"></dialog-component>
+</ng-container>
+
+<ng-template #dialogState2>
+    <ng-container *ngIf="DialogState === 2 else dialogClose">
+        <dialog-component [FormState]="2" (toggleDialog)="showDialog($event)"></dialog-component>
+    </ng-container>
+</ng-template>
+
+<ng-template #dialogClose>
+</ng-template>
+
 
 <footer-component></footer-component>

@@ -4,9 +4,8 @@ import {FooterComponent} from '@views/common/components/footer.component';
 import {HOME_ROUTING} from '@views/home/home.route';
 import {CommonModule} from '@angular/common';
 import {MatCardModule, MatDialogModule} from '@angular/material';
-import {NavbarComponent} from '@views/common/components/navbar/navbar.component';
-import {DialogComponent} from '@views/common/components/dialog/dialog.component';
-
+import {NavbarComponent} from '@views/common/components/navbar.component';
+import {DialogComponent} from '@views/common/components/dialog.component';
 import {FormViewModule} from '@views/form/form.module';
 
 const COMPONENTS = [
@@ -23,7 +22,7 @@ const CONTAINERS = [
 const PAGES = [
 ];
 
-// @ts-ignore
+
 @NgModule({
     declarations: [
         ...COMPONENTS,

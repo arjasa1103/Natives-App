@@ -31,12 +31,26 @@ export class ItemListComponent implements OnInit{
             });
     }
 
+    ngOnInit() {
+        this.route.params.subscribe( params => {
+            this.p = params['page'];
+            this.activeCategory = params['cat'];
+        });
+
+        if (this.activeCategory != "all"){
+            this.setItems(this.activeCategory);
+        } else {
+            this.getAllItems();
+            this.displayCategory = "All Items";
+        }
+    }
+
     getAllItems(){
         this.itemsService.getItems()
             .subscribe((resp: Item[]) => {
                 this.items= resp;
-                console.log(this.items[0]);
             });
+        this.activeCategory ="all";
     }
 
     paginate(page: number){
@@ -50,28 +64,9 @@ export class ItemListComponent implements OnInit{
         this.typesService.getType(id)
             .subscribe((resp: Type) => {
                 this.displayCategory = resp[0].name;
+                this.activeCategory = resp[0].id;
                 this.items = resp[0].items;
-                console.log(resp);
-                console.log(this.items[0].image);
             });
         window.scrollTo(0, 0);
-    }
-
-    ngOnInit() {
-        this.route.params.subscribe( params => {
-            this.p = params['page'];
-            this.activeCategory = params['cat'];
-        });
-
-        if (this.activeCategory != "all"){
-            this.setItems(this.activeCategory);
-            console.log(this.items);
-            console.log(this.activeCategory);
-        } else {
-            this.getAllItems();
-            this.displayCategory = "All Items";
-            console.log(this.items);
-            console.log(this.activeCategory);
-        }
     }
 }
