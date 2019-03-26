@@ -6,6 +6,7 @@ import {MatCardModule, MatDialogModule} from '@angular/material';
 import {NavbarComponent} from '@views/common/components/navbar/navbar.component';
 import {DialogComponent} from '@views/common/components/dialog/dialog.component';
 import {FormViewModule} from '@views/form/form.module';
+import {RouterModule} from '@angular/router';
 
 const COMPONENTS = [
     ItemCardComponent,
@@ -19,6 +20,7 @@ const CONTAINERS = [
 ];
 
 const PAGES = [
+
 ];
 
 
@@ -32,7 +34,8 @@ const PAGES = [
         CommonModule,
         MatCardModule,
         MatDialogModule,
-        FormViewModule
+        FormViewModule,
+        RouterModule
     ],
     exports: [
         ...COMPONENTS,

@@ -24,9 +24,9 @@
     </div>
 </div>
 <div #navbarList class="navbar-list">
-    <div class="navbar-list-link border-color:hover:black">Home</div>
-    <div class="navbar-list-link border-color:hover:black">About</div>
-    <div class="navbar-list-link border-color:hover:black">Items</div>
+    <div class="navbar-list-link border-color:hover:black"><a [routerLink]="['']" class="text-decoration:none font-color:black">Home</a></div>
+    <div [routerLink]="['/items']" class="navbar-list-link border-color:hover:black">About</div>
+    <div class="navbar-list-link border-color:hover:black"><a [routerLink]="['/items']" class="text-decoration:none font-color:black">Items</a></div>
     <div class="navbar-list-link border-color:hover:black">Contact Us</div>
     <ng-container *ngIf="LoginState">
         <div class="navbar-list-link border-color:hover:black" (click)="logout()">Log Out</div>

@@ -6,7 +6,7 @@ import {tap} from "rxjs/operators";
     selector: 'navbar-component',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
-    // changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class NavbarComponent implements OnInit{
@@ -24,12 +24,7 @@ export class NavbarComponent implements OnInit{
 
     ngOnInit(): void {
         this.LoginState = false;
-        this.authService.me().pipe(
-            tap(result => {
-                this.LoginState = true;
-                this.currentUser = result;
-            }),
-        ).subscribe();
+        this.getUser();
     }
 
     public constructor(
@@ -67,11 +62,28 @@ export class NavbarComponent implements OnInit{
     }
 
     public changeState(param) {
-        this.LoginState = param;
+        if (param) {
+            this.getUser();
+        } else {
+            this.LoginState = param;
+        }
+    }
+
+    getUser() {
+        console.log('hahaha');
+        this.authService.me().pipe(
+            tap(result => {
+                this.LoginState = true;
+                this.currentUser = result;
+                console.log('test');
+            }),
+        ).subscribe();
     }
 
     public logout() {
-        this.LoginState = false;
-        this.authService.logout();
+        this.authService.logout().subscribe(res => {
+            localStorage.removeItem('token');
+            this.LoginState = false;
+        });
     }
 }

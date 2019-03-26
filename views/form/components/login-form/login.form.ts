@@ -41,11 +41,12 @@ export class LoginForm implements OnInit{
             tap(result => {
                 // @ts-ignore
                 localStorage.setItem('token', result.access_token);
+                this.toggleDialog.emit(true);
+
             }),
         ).subscribe();
 
         if (this.submitted && this.success){
-            this.toggleDialog.emit(true);
         }
     }
 
