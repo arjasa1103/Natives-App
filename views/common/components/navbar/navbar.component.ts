@@ -6,7 +6,7 @@ import {tap} from "rxjs/operators";
     selector: 'navbar-component',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class NavbarComponent implements OnInit{
@@ -23,9 +23,10 @@ export class NavbarComponent implements OnInit{
     public currentUser: any;
 
     ngOnInit(): void {
-        this.loginState = false;
+        this.LoginState = false;
         this.authService.me().pipe(
             tap(result => {
+                this.LoginState = true;
                 this.currentUser = result;
             }),
         ).subscribe();
