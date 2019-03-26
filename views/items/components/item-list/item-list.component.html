@@ -7,27 +7,37 @@
 </style>
 
 <div class="row margin-top:25">
-    <div class="column:3">
+    <div class="column:3 padding:20">
         <ul>
-            <li *ngFor="let collection of collections" class="margin:10 font-size:18 font-family:avenir-book">
-                {{collection}}
+            <li class="margin-bottom:30 font-size:18 font-family:avenir-black">
+                <h2 class="margin-bottom:10 text-transform:capital">
+                    <a class="text-decoration:none font-color:black" [routerLink]="['/items/category/all/1']" (click)="getAllItems()">All Items</a>
+                </h2>
+            </li>
+            <li *ngFor="let category of categories" class="margin-bottom:30 font-size:18 font-family:avenir-black">
+                <h2 class="margin-bottom:10 text-transform:capital">
+                    {{category.name}}
+                </h2>
+                <ul class="padding:5 margin-bottom:10">
+                    <li *ngFor="let type of category.types" class="margin-bottom:10 font-size:16 font-family:avenir-book">
+                        <a class="text-decoration:none font-color:black" [routerLink]="['/items/category', type.id, '1']" (click)="setItems(type.id)">{{type.name}}</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
-    <div class="column:9 position:relative padding-bottom:50">
-        <h2 class="margin-left:40 font-size:18 font-family:avenir-black">Collection Name</h2>
-        <ul>
-            <div class="row">
-                <li *ngFor="let item of items |paginate: { itemsPerPage: 15, currentPage: p }">
-                    <native-item-card
-                                itemImg={{item.itemImg}}
-                                brandName={{item.brandName}}
-                                itemName={{item.itemName}}
-                                itemPrice={{item.itemPrice}}>
-                        </native-item-card>
-                </li>
-            </div>
-            <pagination-controls (pageChange)="p = $event" class="item-pagination"></pagination-controls>
+    <div class="column:9 position:relative padding-bottom:50 padding:20">
+        <h2 class="margin-left:40 font-size:18 font-family:avenir-black text-transform:capital">{{displayCategory}}</h2>
+        <ul class="display:flex flex-wrap:wrap">
+            <li *ngFor="let item of items |paginate: { itemsPerPage: 15, currentPage: p }" class="column:4 min-height:100">
+                <native-item-card
+                            itemImg={{item.image[0].directory}}
+                            brandName={{item.supplier.name}}
+                            itemName={{item.name}}
+                            itemPrice={{item.price}}>
+                </native-item-card>
+            </li>
+            <pagination-controls (pageChange)="paginate($event)" class="item-pagination"></pagination-controls>
         </ul>
     </div>
 </div>
