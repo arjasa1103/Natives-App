@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginForm} from "@views/form/components/login-form/login.form";
 import {RegisterForm} from "@views/form/components/register-form/register.form";
+import {ServiceModule} from "../../src/services/service.module";
 
 const COMPONENTS = [
     LoginForm,

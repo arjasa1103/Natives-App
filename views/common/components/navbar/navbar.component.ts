@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 @Component({
     selector: 'navbar-component',
     templateUrl: './navbar.component.html',
-    styleUrls: ['navbar/navbar.component.scss'],
+    styleUrls: ['./navbar.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 

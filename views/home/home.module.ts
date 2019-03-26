@@ -9,6 +9,7 @@ import {BannerCarouselComponent} from '@views/home/components/home-banner/banner
 import {ItemCarouselComponent} from "@views/home/components/item-carousel/item-carousel.component";
 import {FormViewModule} from '@views/form/form.module';
 import {CategoryCardComponent} from '@views/home/components/category-card/category-card.component';
+import {ServiceModule} from "../../src/services/service.module";
 
 const COMPONENTS = [
   CategoryCardComponent,
@@ -37,7 +38,8 @@ const PAGES = [
     CommonViewModule,
     NguCarouselModule,
     CommonViewModule,
-    FormViewModule
+    FormViewModule,
+    ServiceModule.toAll()
   ],
 })
 export class HomeViewModule {}
