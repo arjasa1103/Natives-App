@@ -11,7 +11,7 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'category/all/1'
+                redirectTo: 'category/all/1',
             },
             {
                 path: 'category/:cat/:page',
