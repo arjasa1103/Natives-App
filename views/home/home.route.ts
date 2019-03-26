@@ -6,10 +6,6 @@ const routes: Routes = [
   {
     path:'',
     component: HomePage
-  },
-  {
-    path:'items',
-    loadChildren: '@views/items/items.module#ItemsViewModule'
   }
 ];
 

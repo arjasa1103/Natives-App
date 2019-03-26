@@ -25,7 +25,7 @@ const PAGES = [
         ...PAGES,
     ],
     imports: [
-        HOME_ROUTING,
+        // HOME_ROUTING,
         CommonModule,
         ReactiveFormsModule
     ],
