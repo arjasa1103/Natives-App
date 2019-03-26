@@ -10,6 +10,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {RouterModule} from '@angular/router';
 import {ItemComponent} from '@views/items/components/item/item.component';
 import {FormViewModule} from '@views/form/form.module';
+import {ServiceModule} from '../../src/services/service.module';
 
 const COMPONENTS = [
     FeaturedBannerComponent,
@@ -38,7 +39,8 @@ const PAGES =[
         NguCarouselModule,
         NgxPaginationModule,
         FormViewModule,
-        RouterModule
+        RouterModule,
+        ServiceModule.toAll()
     ],
 })
 export class ItemsViewModule {}
