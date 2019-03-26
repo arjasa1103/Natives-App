@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path:'',
     component: HomePage
-  },
+  }
 ];
 
 export const HOME_ROUTING: ModuleWithProviders = RouterModule.forChild(routes);

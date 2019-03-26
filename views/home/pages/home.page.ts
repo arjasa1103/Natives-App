@@ -11,6 +11,5 @@ export class HomePage {
     { title: 'Slide 2' },
     { title: 'Slide 3' },
   ];
-
 }
 

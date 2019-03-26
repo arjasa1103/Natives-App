@@ -1,13 +1,10 @@
 import {NgModule} from '@angular/core';
 import {ItemCardComponent} from '@views/common/components/item-card/item.card';
 import {FooterComponent} from '@views/common/components/footer/footer.component';
-import {HOME_ROUTING} from '@views/home/home.route';
 import {CommonModule} from '@angular/common';
 import {MatCardModule, MatDialogModule} from '@angular/material';
 import {NavbarComponent} from '@views/common/components/navbar/navbar.component';
 import {DialogComponent} from '@views/common/components/dialog/dialog.component';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormViewModule} from '@views/form/form.module';
 
 const COMPONENTS = [
@@ -24,7 +21,7 @@ const CONTAINERS = [
 const PAGES = [
 ];
 
-// @ts-ignore
+
 @NgModule({
     declarations: [
         ...COMPONENTS,
@@ -32,7 +29,6 @@ const PAGES = [
         ...PAGES,
     ],
     imports: [
-        HOME_ROUTING,
         CommonModule,
         MatCardModule,
         MatDialogModule,
