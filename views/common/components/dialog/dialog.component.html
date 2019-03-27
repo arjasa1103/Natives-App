@@ -5,8 +5,7 @@
             <img src="/assets/images/stop-symbol.png" class="height:30 position:absolute right:0 cursor:pointer" (click)="closeDialog()">
         </div>
 
-        <login-form [ngClass]="{ 'open-form': FormState === 1}" (toggleForm)="toggleForm($event)" (toggleDialog)="closeDialog(); changeState()"></login-form>
-        <register-form [ngClass]="{ 'open-form': FormState === 2}" (toggleForm)="toggleForm($event)" (toggleDialog)="closeDialog()"></register-form>
+        <login-form [ngClass]="{ 'open-form': FormState === 1}" (toggleForm)="toggleForm()" (toggleDialog)="closeDialog(); changeState()"></login-form>
+        <register-form [ngClass]="{ 'open-form': FormState === 2}" (toggleForm)="toggleForm()" (toggleDialog)="closeDialog()"></register-form>
     </div>
 </div>
-

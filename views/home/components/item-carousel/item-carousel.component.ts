@@ -8,7 +8,7 @@ import {NguCarouselConfig} from "@ngu/carousel";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCarouselComponent {
-    private Items =[
+    Items =[
         {   itemImg:"https://via.placeholder.com/300.png",
             brandName:"Brand Name",
             itemName:"Item Name",
