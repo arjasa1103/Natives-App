@@ -51,6 +51,7 @@ export class ItemListComponent implements OnInit{
                 this.items= resp;
             });
         this.activeCategory ="all";
+        this.displayCategory ="All Items";
     }
 
     paginate(page: number){
