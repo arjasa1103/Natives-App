@@ -36,7 +36,8 @@
                             itemImg={{item.image[0].directory}}
                             brandName={{item.supplier.name}}
                             itemName={{item.name}}
-                            itemPrice={{item.price}}>
+                            itemPrice={{item.price}}
+                            itemID={{item.id}}>
                 </native-item-card>
             </li>
             <pagination-controls (pageChange)="paginate($event)" class="item-pagination"></pagination-controls>

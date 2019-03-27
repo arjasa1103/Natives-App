@@ -10,4 +10,5 @@ export class ItemCardComponent {
     @Input() public brandName: string;
     @Input() public itemName: string;
     @Input() public itemPrice: number;
+    @Input() public itemID: string;
 };
