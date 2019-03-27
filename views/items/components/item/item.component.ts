@@ -10,7 +10,7 @@ import {Item} from '@views/items/container/item.object';
 })
 export class ItemComponent implements OnInit{
     private itemID: string;
-    private item: Item;
+    item: Item;
 
     constructor(
         private route: ActivatedRoute,
