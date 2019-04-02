@@ -9,6 +9,8 @@
 <featured-banner></featured-banner>
 
 <div class="row margin-top:25">
+
+    <!--List all the categories-->
     <div class="column:3 padding:20">
         <ul>
             <li class="margin-bottom:30 font-size:18 font-family:avenir-black">
@@ -28,8 +30,14 @@
             </li>
         </ul>
     </div>
+
+    <!--Show Items based on active category-->
     <div class="column:9 position:relative padding-bottom:50 padding:20">
+
+        <!--Display the active category name-->
         <h2 class="margin-left:40 font-size:18 font-family:avenir-black text-transform:capital">{{displayCategory}}</h2>
+
+        <!--Show all the image in the active category-->
         <ul class="display:flex flex-wrap:wrap">
             <li *ngFor="let item of items |paginate: { itemsPerPage: 15, currentPage: p }" class="column:4 min-height:100">
                 <native-item-card

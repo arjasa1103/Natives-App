@@ -10,14 +10,17 @@ const routes: Routes = [
         component:ItemsPage,
         children: [
             {
+                //if the router params show nothing redirect to path
                 path: '',
                 redirectTo: 'category/all/1',
             },
             {
+                //go to itemlist component if the router shows category/ and check the category and page
                 path: 'category/:cat/:page',
                 component: ItemListComponent,
             },
             {
+                //go to item component if the router shows item/ and the item ID
                 path: 'item/:id',
                 component: ItemComponent,
             }

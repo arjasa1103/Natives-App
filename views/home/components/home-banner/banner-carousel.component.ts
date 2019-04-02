@@ -11,6 +11,7 @@ import {NguCarouselConfig} from '@ngu/carousel';
 export class BannerCarouselComponent implements OnInit{
 
     @Input() bannerItems: Array<any> = [1, 2, 3, 4, 5];
+    //Carousel configuration
     public carouselTileConfig: NguCarouselConfig = {
         grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
         speed: 250,

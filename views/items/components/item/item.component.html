@@ -4,13 +4,18 @@
     </div>
     <div class="margin-left:50 half display:flex flex-direction:column justify-content:space-between">
         <div class="text-align:left">
+
+            <!--Shows all the item data-->
             <h3 class="font-family:avenir-lightoblique margin-bottom:20 font-size:16 text-transform:capital">{{item.gender.name}} {{item.type.name}}</h3>
             <h1 class="font-family:avenir-black font-size:34">{{item.name}}</h1>
             <h1 class="font-family:avenir-heavy font-size:28 margin-bottom:15"><span class="font-family:avenir-lightoblique font-size:24">by </span>{{item.supplier.name}}</h1>
             <h2 class="font-family:avenir-heavy font-size:24 margin-bottom:25">IDR {{item.price}}</h2>
             <hr>
             <h3 class="font-family:avenir-book font-size:20 margin-top:25">{{item.description}}</h3>
+
         </div>
+
+        <!--Add to cart button-->
         <div class="text-align:right">
             <button class="btn">Add to cart</button>
         </div>

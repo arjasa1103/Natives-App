@@ -9,6 +9,8 @@ import {NguCarouselConfig} from '@ngu/carousel';
 })
 export class FeaturedBannerComponent {
     public bannerItems = [1,2,3,4];
+
+    //Carousel configurations
     public carouselTileConfig: NguCarouselConfig = {
         grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
         speed: 250,

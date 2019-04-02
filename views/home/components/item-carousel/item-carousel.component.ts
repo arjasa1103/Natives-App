@@ -15,6 +15,7 @@ export class ItemCarouselComponent {
             itemPrice:"IDR 123456"}
     ]
 
+    //Constructor for the items of the carousel
     constructor(){
         const item = {   itemImg:"https://via.placeholder.com/300.png",
             brandName:"Brand Name",
@@ -26,6 +27,7 @@ export class ItemCarouselComponent {
         console.log(this.Items);
     }
 
+    //Configuration of carousel
     public carouselItemConfig: NguCarouselConfig = {
         grid: { xs: 1, sm: 3, md: 3, lg: 4, all: 0 },
         speed: 250,

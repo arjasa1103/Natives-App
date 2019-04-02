@@ -1,5 +1,6 @@
 <ngu-carousel [inputs]="carouselItemConfig" [dataSource]="Items" class="position:relative">
     <ngu-item *nguCarouselDef="let item">
+        <!--Items of the carousel from the array data-->
         <native-item-card   itemImg={{item.itemImg}}
                             brandName={{item.brandName}}
                             itemName={{item.itemName}}
@@ -7,6 +8,7 @@
                             itemID="">
         </native-item-card>
     </ngu-item>
+    <!--Previous and next button-->
     <button NguCarouselPrev class='leftCtrl control'><i class="fa fa-chevron-left font-color:orange font-size:24"></i></button>
     <button NguCarouselNext class='rightCtrl control'><i class="fa fa-chevron-right font-color:orange font-size:24"></i></button>
 </ngu-carousel>
