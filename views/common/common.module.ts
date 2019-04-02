@@ -8,6 +8,7 @@ import {DialogComponent} from '@views/common/components/dialog/dialog.component'
 import {FormViewModule} from '@views/form/form.module';
 import {RouterModule} from '@angular/router';
 
+// Component/Containers/Pages used in this module imported here
 const COMPONENTS = [
     ItemCardComponent,
     FooterComponent,

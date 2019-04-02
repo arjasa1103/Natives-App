@@ -2,6 +2,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {HomePage} from '@views/home/pages/home.page';
 
+// Routing for Pages
 const routes: Routes = [
   {
     path:'',

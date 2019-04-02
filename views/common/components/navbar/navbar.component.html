@@ -1,16 +1,21 @@
 <div class="navbar container column:12 font-color:black">
+
+    // Icon for drop down navigation list
     <div class="border-right:2 display:flex align-content:center justify-content:center">
         <img #navbarLogo src="/assets/images/squared-menu-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (click)="toggleNavbar()">
     </div>
 
+    // Shown only when the login state is true (user is logged in)
     <ng-container *ngIf="LoginState else notLogin">
         <div class="navbar-username">
             Welcome, {{currentUser.username}}!
         </div>
     </ng-container>
 
+    // SHown only when the log in state is false (user is not logged in)
     <ng-template #notLogin>
         <div #loginRegister class="navbar-auth width:50" (mouseleave)="closeLoginRegister()">
+            // Icon, when hover display options to register or login
             <img src="/assets/images/male-user-filled.png" class="object-fit:contain cursor:pointer margin-side:5" (mouseenter)="openLoginRegister()">
             <div  class="navbar-auth-list font-color:black">
                 <div class="navbar-auth-list-link" (click)="showDialog(1)">Log In</div>
@@ -19,10 +24,13 @@
         </div>
     </ng-template>
 
+    // Natives logo
     <div class="display:flex align-content:center right:15 top:15 position:absolute">
         <img src="/assets/images/logo.png" class="object-fit:contain width:200 height:30 display:flex">
     </div>
 </div>
+
+// Navbar list display pages to navigate to
 <div #navbarList class="navbar-list">
     <div class="navbar-list-link border-color:hover:black"><a [routerLink]="['']" class="text-decoration:none font-color:black">Home</a></div>
     <div [routerLink]="['/items']" class="navbar-list-link border-color:hover:black">About</div>
@@ -33,15 +41,18 @@
     </ng-container>
 </div>
 
+// Open dialog state with Login Form
 <ng-container *ngIf="DialogState === 1 else dialogState2">
     <dialog-component [FormState]="1" (toggleDialog)="showDialog($event)" (toggleState)="changeState($event)"></dialog-component>
 </ng-container>
 
+// Open dialog state with Register Form
 <ng-template #dialogState2>
     <ng-container *ngIf="DialogState === 2 else dialogClose">
         <dialog-component [FormState]="2" (toggleDialog)="showDialog($event)"></dialog-component>
     </ng-container>
 </ng-template>
 
+// Close dialog component
 <ng-template #dialogClose>
 </ng-template>

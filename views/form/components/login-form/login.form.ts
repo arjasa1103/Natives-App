@@ -28,10 +28,12 @@ export class LoginForm implements OnInit{
         this.submitted = false;
     }
 
+    // Emit value 1 to parent component
     public gotoSignup() {
         this.toggleForm.emit(1);
     }
 
+    // Function to submit form and change submitted or success value to show error in HTML
     public submitForm(){
         this.submitted = true;
         this.success = !(this.form.controls['email'].invalid || this.form.controls['password'].invalid);

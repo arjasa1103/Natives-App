@@ -11,6 +11,7 @@ import {FormViewModule} from '@views/form/form.module';
 import {CategoryCardComponent} from '@views/home/components/category-card/category-card.component';
 import {ServiceModule} from "../../src/services/service.module";
 
+// Component/Containers/Pages used in this module imported here
 const COMPONENTS = [
   CategoryCardComponent,
   BrandInspirationComponent,

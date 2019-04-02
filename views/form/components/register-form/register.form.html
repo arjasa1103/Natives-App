@@ -1,34 +1,53 @@
+<!--Register Form-->
 <ng-container *ngIf="!success else registerSuccess">
     <form role="form" [formGroup]="form" class="form column:12 font-color:black">
+
+        <!--Input for Username-->
         <div class="form-children border-color:black column:11">
             <img src="/assets/images/male-user-filled.png" class="form-children-image">
             <input type="text" formControlName="username" placeholder="Username" class="form-children-input font-color:black column:10">
         </div>
+
+        <!--Validation if input is incorrect-->
         <div class="form-children-error column:11" *ngIf="!success && submitted && form.controls['username'].invalid">
             Invalid Input
         </div>
+
+        <!--Input for Email-->
         <div class="form-children border-color:black column:11">
             <img src="/assets/images/envelope-filled.png" class="form-children-image">
             <input type="email" formControlName="email" placeholder="Email" class="form-children-input font-color:black column:10">
         </div>
+
+        <!--Validation if input is incorrect-->
         <div class="form-children-error column:11" *ngIf="!success && submitted && form.controls['email'].invalid">
             Invalid Input
         </div>
+
+        <!--Input for Password-->
         <div class="form-children border-color:black column:11">
             <img src="/assets/images/lock-filled.png" class="form-children-image">
             <input type="password" formControlName="password" placeholder="Password" class="form-children-input font-color:black column:10">
         </div>
+
+        <!--Validation if input is incorrect-->
         <div class="form-children-error column:11" *ngIf="!success && submitted && form.controls['password'].invalid">
             Invalid Input
         </div>
+
+        <!--Sign up button-->
         <div>
             <button class="form-button background-color:pink font-color:white" (click)="submitForm()">Sign Up</button>
         </div>
+
+        <!--Go to Sign in page-->
         <div class="form-footer font-color:black">
             Already have an account? <button (click)="gotoSignin()" class="font-color:black">Sign In</button>
         </div>
     </form>
 </ng-container>
+
+<!--Display an icon when register is successful-->
 <ng-template #registerSuccess>
     <div class="display:flex justify-content:center align-items:center height:150">
         <img src="/assets/images/checkmark.svg" class="height:75">

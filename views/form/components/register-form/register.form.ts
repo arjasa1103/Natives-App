@@ -28,10 +28,12 @@ export class RegisterForm implements OnInit{
         this.submitted = false;
     }
 
+    // Emit the value 2 to parent component
     public gotoSignin() {
         this.toggleForm.emit(2);
     }
 
+    // Function to submit form and change submitted or success value to display Validation in HTML
     public submitForm() {
         this.submitted = true;
         this.success = !(this.form.controls['email'].invalid ||

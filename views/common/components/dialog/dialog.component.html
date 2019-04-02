@@ -1,3 +1,4 @@
+<!--Reusable component as the container of the forms since the top part is the same-->
 <div #dialogContainer class="position:fixed top:0 left:0 z-index:9 big-container">
     <div #formContainer class="background-color:white column:3 dialog padding:25 transition box-container">
         <div class="column:12 dialog-top">
@@ -5,6 +6,7 @@
             <img src="/assets/images/stop-symbol.png" class="height:30 position:absolute right:0 cursor:pointer" (click)="closeDialog()">
         </div>
 
+        <!--Call the form pages based on the current Form State-->
         <login-form [ngClass]="{ 'open-form': FormState === 1}" (toggleForm)="toggleForm()" (toggleDialog)="closeDialog(); changeState()"></login-form>
         <register-form [ngClass]="{ 'open-form': FormState === 2}" (toggleForm)="toggleForm()" (toggleDialog)="closeDialog()"></register-form>
     </div>

@@ -11,11 +11,15 @@ import {tap} from "rxjs/operators";
 
 export class NavbarComponent implements OnInit{
 
+    // An angular way to replace .getElementByID / .getElementByClassName
     @ViewChild('navbarLogo') navbarLogo: ElementRef;
     @ViewChild('navbarList') navbarList: ElementRef;
     @ViewChild('loginRegister') loginRegister: ElementRef;
 
+    // Output for parent component
     @Output() public toggleDialog: EventEmitter<number>;
+
+    // Input from parent component
     @Input() public loginState: boolean;
 
     public DialogState: number;
@@ -34,6 +38,7 @@ export class NavbarComponent implements OnInit{
         this.DialogState = 0;
     }
 
+    // Function to open navigation list
     public toggleNavbar(): void {
         if (this.navbarLogo.nativeElement.src === 'http://localhost:4200/assets/images/squared-menu-filled.png') {
             this.navbarLogo.nativeElement.src = 'http://localhost:4200/assets/images/squared-menu.png';
@@ -43,6 +48,7 @@ export class NavbarComponent implements OnInit{
         this.navbarList.nativeElement.classList.toggle('navbar-show');
     }
 
+    // Function to open options to Login or Register
     public openLoginRegister(): void {
         if (this.loginRegister.nativeElement.classList.contains('width:50')) {
             this.loginRegister.nativeElement.classList.remove('width:50');
@@ -50,6 +56,7 @@ export class NavbarComponent implements OnInit{
         }
     }
 
+    // Function to close options to Login or Register
     public closeLoginRegister(): void {
         if (this.loginRegister.nativeElement.classList.contains('width:250')) {
             this.loginRegister.nativeElement.classList.remove('width:250');
@@ -57,10 +64,12 @@ export class NavbarComponent implements OnInit{
         }
     }
 
+    // Function to change Dialog State resulting in opening of Dialog component
     public showDialog(param) {
         this.DialogState = param;
     }
 
+    // Function to change Log in state, may result calling of getUser() function
     public changeState(param) {
         if (param) {
             this.getUser();
@@ -69,6 +78,7 @@ export class NavbarComponent implements OnInit{
         }
     }
 
+    // Function to use me() from AuthService to get current user data and change put it to variable
     getUser() {
         this.authService.me().pipe(
             tap(result => {
@@ -79,6 +89,7 @@ export class NavbarComponent implements OnInit{
         ).subscribe();
     }
 
+    // Function to use logout() from AuthService and change LoginState
     public logout() {
         this.authService.logout().subscribe(res => {
             localStorage.removeItem('token');

@@ -6,6 +6,7 @@ import {LoginForm} from "@views/form/components/login-form/login.form";
 import {RegisterForm} from "@views/form/components/register-form/register.form";
 import {ServiceModule} from "../../src/services/service.module";
 
+// Component/Containers/Pages used in this module imported here
 const COMPONENTS = [
     LoginForm,
     RegisterForm,

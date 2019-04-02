@@ -26,6 +26,7 @@ export class DialogComponent implements OnInit{
     @ViewChild('formContainer') formContainer: ElementRef;
     @ViewChild('dialogContainer') dialogContainer: ElementRef;
 
+    // Change the form container's height resulting in animation
     public toggleForm() {
         if (this.FormState === 1) {
             this.formContainer.nativeElement.classList.remove('height:350');
@@ -38,10 +39,12 @@ export class DialogComponent implements OnInit{
         this.FormState = this.FormState % 2 + 1;
     }
 
+    // Close the dialog by emitting the value 3 to parent component
     public closeDialog() {
         this.toggleDialog.emit(3);
     }
 
+    // Change the login state in parent component by emitting the value true
     public changeState() {
         this.toggleState.emit(true);
     }
